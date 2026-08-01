@@ -1,18 +1,18 @@
 export const siteConfig = {
-  name: "Yua Studio",
-  activityName: "ゆーあ",
+  name: "OneMADE Studio",
   catchCopy: "あなたの表現を、形にする。",
   description:
-    "Yua Studioは、音楽・映像・教育・Web制作を通して、一人ひとりの活動や表現を支える個人クリエイティブスタジオです。",
+    "OneMADE Studioは、音楽・映像・Web・デザイン・教育など、それぞれの得意分野を持つクリエイターとともに、一人ひとりの“つくりたい”を形にするクリエイティブスタジオです。",
   descriptionLines: [
-    "Yua Studioは、音楽・映像・教育・Web制作を通して、",
-    "一人ひとりの活動や表現を支える個人クリエイティブスタジオです。",
+    "OneMADE Studioは、音楽・映像・Web・デザイン・教育など、",
+    "それぞれの得意分野を持つクリエイターとともに、一人ひとりの“つくりたい”を形にするクリエイティブスタジオです。",
   ],
-  seoTitle: "Yua Studio｜音楽・映像・教育・Web制作",
+  seoTitle: "OneMADE Studio｜音楽・映像・教育・Web制作のクリエイティブスタジオ",
   seoDescription:
-    "Yua Studioは、動画編集、ミックス・マスタリング、作詞作曲、数学指導、教材制作、Webサイト制作、アカペラ楽譜制作を行う個人クリエイティブスタジオです。",
+    "OneMADE Studioは、動画編集、ミックス・マスタリング、オリジナル楽曲制作、数学指導、教材制作、Webサイト制作、アカペラ楽譜制作など、それぞれの得意分野を持つクリエイターとともに制作を行うクリエイティブスタジオです。",
   url: "https://yua-studio.vercel.app",
   contactEmail: "yua.office2560@gmail.com",
+  copyright: "© 2026 OneMADE Studio. All rights reserved.",
   social: {
     x: "https://x.com/yua_studio2560",
   },
@@ -28,6 +28,7 @@ export const navLinks: NavLink[] = [
   { label: "Services", href: "/services" },
   { label: "Works", href: "/works" },
   { label: "About", href: "/about" },
+  { label: "Creator", href: "/creator" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
@@ -37,6 +38,7 @@ export const footerLinks: NavLink[] = [
   { label: "Services", href: "/services" },
   { label: "Works", href: "/works" },
   { label: "About", href: "/about" },
+  { label: "Creator", href: "/creator" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];

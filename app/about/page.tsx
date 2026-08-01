@@ -8,18 +8,18 @@ import { aboutContent } from "@/data/content";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Yua Studioとして活動する「ゆーあ」のプロフィールです。音楽、映像、教育、Webを組み合わせた活動について紹介しています。",
+    "OneMADE Studioが目指している「つくりたい人」と「つくれる人」をつなぐクリエイティブスタジオのあり方について紹介しています。",
 };
 
 export default function AboutPage() {
   return (
     <div className="py-16 sm:py-24">
       <Container className="flex flex-col items-center gap-10">
-        <SectionHeading eyebrow="About" title={`${aboutContent.name}について`} />
+        <SectionHeading eyebrow="About" title="OneMADE Studioについて" />
 
         <ImageWithFallback
           src="/images/about/about-2.png"
-          alt={`${aboutContent.name}について`}
+          alt="OneMADE Studioについて"
           wrapperClassName="aspect-[16/7] w-full max-w-2xl rounded-3xl shadow-soft"
         />
 

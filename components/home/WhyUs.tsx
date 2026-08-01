@@ -7,7 +7,7 @@ export default function WhyUs() {
   return (
     <section className="py-20 sm:py-28">
       <Container className="flex flex-col gap-12">
-        <SectionHeading eyebrow="Why Yua Studio" title="選ばれる理由" />
+        <SectionHeading eyebrow="Why OneMADE Studio" title="選ばれる理由" />
 
         <div className="grid gap-6 sm:grid-cols-3">
           {reasons.map((reason, index) => (

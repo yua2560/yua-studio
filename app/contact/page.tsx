@@ -7,7 +7,7 @@ import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Yua Studioへのお問い合わせはこちらから。ご相談だけでも歓迎しています。",
+  description: "OneMADE Studioへのお問い合わせはこちらから。ご相談だけでも歓迎しています。",
 };
 
 export default function ContactPage() {
