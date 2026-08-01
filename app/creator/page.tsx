@@ -50,9 +50,14 @@ export default function CreatorPage() {
             では、案件ごとに一緒に制作していただけるクリエイターを募集しています。学生、副業、フリーランスなど、現在の働き方や肩書きは問いません。あなたの得意なことを活かして、誰かの「つくりたい」を一緒に形にしませんか。
           </p>
 
-          <Button href="#apply-form" variant="primary">
-            クリエイターに応募する
-          </Button>
+          <div className="flex flex-col items-center gap-3 sm:flex-row">
+            <Button href="#apply-form" variant="primary">
+              クリエイターに応募する
+            </Button>
+            <Button href="/creators" variant="secondary">
+              所属クリエイターを見る →
+            </Button>
+          </div>
         </Container>
       </section>
 

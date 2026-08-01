@@ -21,7 +21,12 @@ export default function Hero() {
         </span>
 
         <h1 className="font-display max-w-3xl text-3xl leading-snug font-bold text-brand-navy-900 sm:text-5xl sm:leading-tight">
-          {siteConfig.catchCopy}
+          {siteConfig.catchCopyLines.map((line, index) => (
+            <span key={line}>
+              {line}
+              {index < siteConfig.catchCopyLines.length - 1 && <br />}
+            </span>
+          ))}
         </h1>
 
         <PromoCarousel />

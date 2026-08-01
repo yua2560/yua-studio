@@ -3,11 +3,19 @@ import { notFound } from "next/navigation";
 import Container from "@/components/ui/Container";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
 import CreatorAvatar from "@/components/creators/CreatorAvatar";
 import { creators } from "@/data/creators";
 
 type Props = {
   params: Promise<{ slug: string }>;
+};
+
+const snsLabels: Record<string, string> = {
+  x: "X",
+  instagram: "Instagram",
+  youtube: "YouTube",
+  portfolio: "Portfolio",
 };
 
 export function generateStaticParams() {
@@ -32,6 +40,10 @@ export default async function CreatorProfilePage({ params }: Props) {
   if (!creator) {
     notFound();
   }
+
+  const snsEntries = creator.sns
+    ? (Object.entries(creator.sns).filter(([, url]) => url) as [string, string][])
+    : [];
 
   return (
     <div className="py-16 sm:py-24">
@@ -62,20 +74,38 @@ export default async function CreatorProfilePage({ params }: Props) {
           ))}
         </div>
 
-        {creator.sns?.x && (
-          <a
-            href={creator.sns.x}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="text-sm font-medium text-brand-navy-700 hover:text-brand-navy-900 hover:underline"
-          >
-            Xはこちら →
-          </a>
+        {snsEntries.length > 0 && (
+          <Card className="flex w-full max-w-sm flex-col gap-3">
+            <h2 className="text-xs font-semibold tracking-widest text-brand-navy-500 uppercase">
+              SNS / Links
+            </h2>
+            <div className="flex flex-col gap-2">
+              {snsEntries.map(([key, url]) => (
+                <a
+                  key={key}
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="text-sm font-medium text-brand-navy-700 hover:text-brand-navy-900 hover:underline"
+                >
+                  {snsLabels[key] ?? key}
+                </a>
+              ))}
+            </div>
+            <p className="text-xs leading-relaxed text-foreground/60">
+              こちらは{creator.name}の活動・作品を見るためのリンクです。
+            </p>
+          </Card>
         )}
 
-        <Button href="/contact" variant="primary">
-          相談する
-        </Button>
+        <div className="flex flex-col gap-2">
+          <p className="text-sm text-foreground/70">
+            制作のご依頼はOneMADE Studioよりお問い合わせください。
+          </p>
+          <Button href={`/contact?creator=${creator.slug}`} variant="primary">
+            このクリエイターに依頼する
+          </Button>
+        </div>
       </Container>
     </div>
   );

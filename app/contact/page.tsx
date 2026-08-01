@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
@@ -17,12 +18,14 @@ export default function ContactPage() {
         <SectionHeading
           eyebrow="Contact"
           title="お問い合わせ"
-          description="依頼するかどうか決まっていない段階でのご相談も歓迎です。フォームにご入力のうえ送信すると、メールアプリが立ち上がります。お急ぎの場合はXのDMからもご連絡いただけます。"
+          description="依頼するかどうか決まっていない段階でのご相談も歓迎です。ご依頼・お見積もりはOneMADE Studioが窓口となって承ります。内容を確認したうえで、ご希望や制作内容に合ったクリエイターをご提案します。"
         />
 
         <div className="grid gap-8 lg:grid-cols-3">
           <Card className="lg:col-span-2">
-            <ContactForm />
+            <Suspense fallback={null}>
+              <ContactForm />
+            </Suspense>
           </Card>
 
           <div className="flex flex-col gap-6">
@@ -39,14 +42,24 @@ export default function ContactPage() {
                   {siteConfig.contactEmail}
                 </a>
               </p>
+              <p className="text-xs leading-relaxed text-foreground/60">
+                ご依頼・お見積もりのご相談は、フォームまたはメールにてお願いします。
+              </p>
+            </Card>
+
+            <Card className="flex flex-col gap-3">
+              <h3 className="font-display text-base font-bold text-brand-navy-900">SNS</h3>
               <a
                 href={siteConfig.social.x}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="text-sm font-medium text-brand-navy-700 hover:text-brand-navy-900 hover:underline"
               >
-                Xはこちら →
+                公式Xを見る →
               </a>
+              <p className="text-xs leading-relaxed text-foreground/60">
+                最新情報の発信用です。お仕事のご相談・ご依頼はフォームからお願いします。
+              </p>
             </Card>
 
             <Card className="flex flex-col gap-3">

@@ -1,19 +1,29 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { services } from "@/data/services";
+import { creators } from "@/data/creators";
 import { siteConfig } from "@/data/site";
 
 const serviceOptions = services.map((s) => s.name);
 const publicationOptions = ["公開してもよい", "公開しないでほしい", "内容によって相談したい"];
+const OMAKASE = "おまかせ";
 
 export default function ContactForm() {
+  const searchParams = useSearchParams();
+  const requestedCreator = creators.find((c) => c.slug === searchParams.get("creator"));
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [creatorPreference, setCreatorPreference] = useState(
+    requestedCreator ? requestedCreator.slug : ""
+  );
   const [budget, setBudget] = useState("");
   const [deadline, setDeadline] = useState("");
   const [message, setMessage] = useState("");
+  const [otherNotes, setOtherNotes] = useState("");
   const [publication, setPublication] = useState(publicationOptions[0]);
   const [mailtoUrl, setMailtoUrl] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -24,17 +34,26 @@ export default function ContactForm() {
     );
   };
 
+  const creatorPreferenceLabel = () => {
+    if (!creatorPreference) return OMAKASE;
+    return creators.find((c) => c.slug === creatorPreference)?.name ?? OMAKASE;
+  };
+
   const buildMailBody = () =>
     [
       `お名前: ${name}`,
       `メールアドレス: ${email}`,
-      `希望サービス: ${selectedServices.length ? selectedServices.join("、") : "未選択"}`,
+      `依頼したいサービス: ${selectedServices.length ? selectedServices.join("、") : "未選択"}`,
+      `希望クリエイター: ${creatorPreferenceLabel()}`,
       `予算: ${budget || "未入力"}`,
       `希望納期: ${deadline || "未入力"}`,
       `実績公開の可否: ${publication}`,
       "",
       "依頼内容:",
       message,
+      "",
+      "その他相談事項:",
+      otherNotes || "特になし",
     ].join("\n");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -66,6 +85,10 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+      <p className="rounded-2xl bg-brand-blue-50 p-4 text-xs leading-relaxed text-foreground/70 sm:text-sm">
+        ご依頼・お見積もりはOneMADE Studioが窓口となって承ります。内容を確認したうえで、ご希望や制作内容に合ったクリエイターをご提案します。
+      </p>
+
       <div className="grid gap-6 sm:grid-cols-2">
         <label className="flex flex-col gap-2 text-sm font-medium text-brand-navy-900">
           お名前
@@ -94,7 +117,7 @@ export default function ContactForm() {
 
       <fieldset className="flex flex-col gap-3">
         <legend className="text-sm font-medium text-brand-navy-900">
-          希望サービス(複数選択可)
+          依頼したいサービス(複数選択可)
         </legend>
         <div className="grid gap-2 sm:grid-cols-2">
           {serviceOptions.map((service) => (
@@ -113,6 +136,25 @@ export default function ContactForm() {
           ))}
         </div>
       </fieldset>
+
+      <label className="flex flex-col gap-2 text-sm font-medium text-brand-navy-900">
+        希望クリエイター(任意)
+        <select
+          value={creatorPreference}
+          onChange={(e) => setCreatorPreference(e.target.value)}
+          className="rounded-xl border border-brand-blue-200 bg-white px-4 py-3 text-sm text-foreground outline-none focus:border-brand-navy-500"
+        >
+          <option value="">{OMAKASE}(OneMADE Studioにおまかせ)</option>
+          {creators.map((creator) => (
+            <option key={creator.slug} value={creator.slug}>
+              {creator.name}
+            </option>
+          ))}
+        </select>
+        <span className="text-xs font-normal text-foreground/60">
+          特にご希望がなければ、内容に合わせてOneMADE Studioが担当クリエイターをご提案します。
+        </span>
+      </label>
 
       <div className="grid gap-6 sm:grid-cols-2">
         <label className="flex flex-col gap-2 text-sm font-medium text-brand-navy-900">
@@ -147,6 +189,17 @@ export default function ContactForm() {
           rows={6}
           className="resize-none rounded-xl border border-brand-blue-200 bg-white px-4 py-3 text-sm text-foreground outline-none focus:border-brand-navy-500"
           placeholder="ご依頼内容やご相談したいことをご記入ください。"
+        />
+      </label>
+
+      <label className="flex flex-col gap-2 text-sm font-medium text-brand-navy-900">
+        その他相談事項(任意)
+        <textarea
+          value={otherNotes}
+          onChange={(e) => setOtherNotes(e.target.value)}
+          rows={3}
+          className="resize-none rounded-xl border border-brand-blue-200 bg-white px-4 py-3 text-sm text-foreground outline-none focus:border-brand-navy-500"
+          placeholder="その他、伝えておきたいことがあればご記入ください。"
         />
       </label>
 

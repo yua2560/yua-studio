@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
+import Button from "@/components/ui/Button";
 import CreatorCard from "@/components/creators/CreatorCard";
 import CreatorWantedCard from "@/components/creators/CreatorWantedCard";
 import { creators } from "@/data/creators";
@@ -14,11 +15,26 @@ export default function CreatorsSection() {
           description="学生・若手クリエイターを中心に、それぞれの得意分野を活かして制作しています。"
         />
 
+        <div className="mx-auto flex max-w-2xl flex-col gap-2 text-center">
+          <h3 className="font-display text-lg font-bold text-brand-navy-900 sm:text-xl">
+            あなたの依頼に、ちょうどいいクリエイターを。
+          </h3>
+          <p className="text-sm leading-relaxed text-foreground/80">
+            OneMADE Studioには、それぞれ異なる得意分野を持つクリエイターが参加しています。ご相談内容に合わせて、ぴったりの担当者をご提案します。
+          </p>
+        </div>
+
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {creators.map((creator) => (
             <CreatorCard key={creator.slug} creator={creator} />
           ))}
           <CreatorWantedCard />
+        </div>
+
+        <div className="text-center">
+          <Button href="/creators" variant="ghost">
+            所属クリエイターを見る →
+          </Button>
         </div>
       </Container>
     </section>

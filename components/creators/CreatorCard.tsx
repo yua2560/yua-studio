@@ -24,9 +24,14 @@ export default function CreatorCard({ creator }: { creator: Creator }) {
 
       <p className="text-sm leading-relaxed text-foreground/80">{creator.bio}</p>
 
-      <Button href={`/creators/${creator.slug}`} variant="ghost">
-        プロフィールを見る →
-      </Button>
+      <div className="flex flex-col gap-2 sm:flex-row">
+        <Button href={`/creators/${creator.slug}`} variant="ghost">
+          プロフィールを見る →
+        </Button>
+        <Button href={`/contact?creator=${creator.slug}`} variant="secondary">
+          このクリエイターに依頼する
+        </Button>
+      </div>
     </Card>
   );
 }

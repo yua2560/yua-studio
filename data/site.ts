@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: "OneMADE Studio",
   catchCopy: "一人でつくる、から。一緒につくる、へ。",
+  catchCopyLines: ["一人でつくる、から。", "一緒につくる、へ。"],
   description:
     "音楽・映像・Web・デザイン・教育。学生や個人の方にも頼みやすい、小さなクリエイティブスタジオです。",
   descriptionLines: [
