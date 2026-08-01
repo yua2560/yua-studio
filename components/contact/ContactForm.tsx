@@ -15,6 +15,8 @@ export default function ContactForm() {
   const [deadline, setDeadline] = useState("");
   const [message, setMessage] = useState("");
   const [publication, setPublication] = useState(publicationOptions[0]);
+  const [mailtoUrl, setMailtoUrl] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
 
   const toggleService = (service: string) => {
     setSelectedServices((prev) =>
@@ -22,11 +24,8 @@ export default function ContactForm() {
     );
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const subject = `【Yua Studio お問い合わせ】${name || "お名前未入力"}様より`;
-    const body = [
+  const buildMailBody = () =>
+    [
       `お名前: ${name}`,
       `メールアドレス: ${email}`,
       `希望サービス: ${selectedServices.length ? selectedServices.join("、") : "未選択"}`,
@@ -38,11 +37,31 @@ export default function ContactForm() {
       message,
     ].join("\n");
 
-    const mailtoUrl = `mailto:${siteConfig.contactEmail}?subject=${encodeURIComponent(
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const subject = `【Yua Studio お問い合わせ】${name || "お名前未入力"}様より`;
+    const body = buildMailBody();
+
+    const url = `mailto:${siteConfig.contactEmail}?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
 
-    window.location.href = mailtoUrl;
+    setMailtoUrl(url);
+    setCopied(false);
+
+    // window.location.href だと反応しない環境があるため、リンク要素を直接クリックさせる
+    const link = document.createElement("a");
+    link.href = url;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleCopy = async () => {
+    const text = `宛先: ${siteConfig.contactEmail}\n\n${buildMailBody()}`;
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
   };
 
   return (
@@ -164,6 +183,27 @@ export default function ContactForm() {
       <p className="text-xs leading-relaxed text-foreground/60">
         送信ボタンを押すと、入力内容を差出人メールアプリで開きます。内容をご確認のうえ、送信してください。
       </p>
+
+      {mailtoUrl && (
+        <div className="flex flex-col gap-2 rounded-2xl bg-brand-blue-50 p-4 text-sm text-foreground/80">
+          <p>メールアプリが自動的に開かなかった場合は、以下をお試しください。</p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={mailtoUrl}
+              className="font-medium text-brand-navy-700 hover:text-brand-navy-900 hover:underline"
+            >
+              こちらをクリックしてメールを開く →
+            </a>
+            <button
+              type="button"
+              onClick={handleCopy}
+              className="font-medium text-brand-navy-700 hover:text-brand-navy-900 hover:underline"
+            >
+              {copied ? "コピーしました" : "入力内容をコピーする →"}
+            </button>
+          </div>
+        </div>
+      )}
     </form>
   );
 }
