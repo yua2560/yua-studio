@@ -27,18 +27,18 @@ export const workCategories: WorkCategory[] = [
 // YouTube動画がある作品は youtubeUrl に動画のURLを入れてください。ない場合は空文字のままでOKです。
 export const works: Work[] = [
   {
-    id: "original-ballad",
-    title: "オリジナルバラード楽曲(サンプル)",
+    id: "original-koibitotowakaretaima",
+    title: "オリジナルバラード楽曲「恋人と別れた、今。」",
     category: "Music",
     role: "作詞・作曲",
     description:
-      "ピアノとストリングスを生かした、オリジナルバラード楽曲の制作サンプルです。",
+      "ピアノとストリングスを生かした、オリジナルバラード楽曲です。",
     detail:
-      "卒業や別れをテーマに、切なさと温かさを大切にしながらメロディと歌詞を制作しました。",
+      "別れをテーマに、切なさと温かさを大切にしながらメロディと歌詞を制作しました。",
     date: "2026/8/1",
-    image: "/images/works/original-ballad.jpg",
-    youtubeUrl: "",
-    isSample: true,
+    image: "/images/works/original-koibitotowakaretaima.png",
+    youtubeUrl: "https://youtu.be/rUIDs1ve5hQ",
+    isSample: false,
   },
   {
     id: "original-ballad-mix-mastering",
