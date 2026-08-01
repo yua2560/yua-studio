@@ -2,10 +2,10 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import WorkCard from "@/components/works/WorkCard";
-import { works } from "@/data/works";
+import { sortedWorks } from "@/data/works";
 
 export default function WorksPreview() {
-  const preview = works.slice(0, 3);
+  const preview = sortedWorks.slice(0, 3);
 
   return (
     <section className="py-20 sm:py-28">
@@ -13,7 +13,7 @@ export default function WorksPreview() {
         <SectionHeading
           eyebrow="Works"
           title="制作実績"
-          description="現在はサンプル作品を中心に掲載しています。今後、実際の制作実績も随時追加していきます。"
+          description="実績とあわせて、サンプル作品も掲載しています。今後、実際の制作実績を随時追加していきます。"
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

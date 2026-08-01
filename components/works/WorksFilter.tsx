@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { WorkCategory, works, workCategories } from "@/data/works";
+import { WorkCategory, sortedWorks, workCategories } from "@/data/works";
 import WorkCard from "./WorkCard";
 
 const ALL = "すべて";
@@ -10,7 +10,10 @@ export default function WorksFilter() {
   const [active, setActive] = useState<WorkCategory | typeof ALL>(ALL);
 
   const filtered = useMemo(
-    () => (active === ALL ? works : works.filter((w) => w.category === active)),
+    () =>
+      active === ALL
+        ? sortedWorks
+        : sortedWorks.filter((w) => w.category === active),
     [active]
   );
 

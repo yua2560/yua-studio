@@ -7,7 +7,10 @@ export type Work = {
   role: string;
   description: string;
   detail: string;
-  image?: string;
+  date: string;
+  image: string;
+  youtubeUrl?: string;
+  linkUrl?: string;
   isSample: boolean;
 };
 
@@ -20,9 +23,25 @@ export const workCategories: WorkCategory[] = [
 ];
 
 // サンプルデータです。制作実績が増え次第、この配列に追加・差し替えを行ってください。
+// サムネイル画像は public/images/works/ に、各作品の id と同じファイル名で配置してください(例: original-ballad.jpg)。
+// YouTube動画がある作品は youtubeUrl に動画のURLを入れてください。ない場合は空文字のままでOKです。
 export const works: Work[] = [
   {
-    id: "sample-ballad-mix",
+    id: "original-ballad",
+    title: "オリジナルバラード楽曲(サンプル)",
+    category: "Music",
+    role: "作詞・作曲",
+    description:
+      "ピアノとストリングスを生かした、オリジナルバラード楽曲の制作サンプルです。",
+    detail:
+      "卒業や別れをテーマに、切なさと温かさを大切にしながらメロディと歌詞を制作しました。",
+    date: "2026/8/1",
+    image: "/images/works/original-ballad.jpg",
+    youtubeUrl: "",
+    isSample: true,
+  },
+  {
+    id: "original-ballad-mix-mastering",
     title: "オリジナルバラード楽曲 ミックス・マスタリング(サンプル)",
     category: "Music",
     role: "ミックス・マスタリング",
@@ -30,21 +49,27 @@ export const works: Work[] = [
       "ピアノとストリングスを中心としたバラード楽曲のミックス・マスタリングを行ったサンプル制作です。",
     detail:
       "楽器バランスとボーカルの聴きやすさを重視し、曲全体の温かみを損なわないようにマスタリングで音圧を整えました。配信を想定した書き出しを行っています。",
+    date: "2026/8/1",
+    image: "/images/works/original-ballad-mix-mastering.jpg",
+    youtubeUrl: "",
     isSample: true,
   },
   {
-    id: "sample-utattemita",
-    title: "歌ってみた音源 ピッチ補正・ミックス(サンプル)",
+    id: "utattemita-pitch-mix-mastering-encode",
+    title: "歌ってみた音源 ピッチ補正・ミックス・マスタリング・エンコード(サンプル)",
     category: "Music",
-    role: "ピッチ補正、ミックス",
+    role: "ピッチ補正、ミックス、マスタリング、エンコード",
     description:
-      "歌ってみた音源を想定し、音程補正からミックスまでを行ったサンプル制作です。",
+      "歌ってみた音源を想定し、音程補正からミックス・マスタリング・エンコードまでを行ったサンプル制作です。",
     detail:
-      "不自然にならない範囲でのピッチ補正と、原曲のオケに馴染むボーカルミックスを意識して制作しました。",
+      "不自然にならない範囲でのピッチ補正と、原曲のオケに馴染むミックス・マスタリングを行い、配信用にエンコードして書き出しました。",
+    date: "2026/8/1",
+    image: "/images/works/utattemita-pitch-mix-mastering-encode.png",
+    youtubeUrl: "https://youtu.be/iqa4Q-pMLH0",
     isSample: true,
   },
   {
-    id: "sample-shorts-edit",
+    id: "shorts-edit",
     title: "ショート動画編集(サンプル)",
     category: "Video",
     role: "カット、テロップ、BGM選定",
@@ -52,83 +77,43 @@ export const works: Work[] = [
       "短尺動画向けに、テンポの良いカットとテロップを意識して編集したサンプル制作です。",
     detail:
       "冒頭数秒で内容が伝わるように構成し、離脱されにくいテンポのカット割りとテロップ配置を行いました。",
+    date: "2026/8/1",
+    image: "/images/works/shorts-edit.jpg",
+    youtubeUrl: "",
     isSample: true,
   },
   {
-    id: "sample-music-video",
-    title: "ミュージックビデオ風動画編集(サンプル)",
-    category: "Video",
-    role: "編集、色調補正、サムネイル制作",
-    description:
-      "楽曲の雰囲気に合わせた色調補正とカット割りを行ったミュージックビデオ風動画のサンプルです。",
-    detail:
-      "楽曲の世界観に合わせて色味とカットのリズムを調整し、映像と音のイメージが揃うよう仕上げました。",
-    isSample: true,
-  },
-  {
-    id: "sample-profile-site",
-    title: "個人クリエイター向けプロフィールサイト(サンプル)",
+    id: "site-sansu-sugaku-atelier",
+    title: "個人クリエーター向けサイト「算数・数学のアトリエ」",
     category: "Web",
     role: "デザイン、実装、公開支援",
     description:
-      "個人クリエイターの活動紹介を目的とした、1ページ構成のシンプルなプロフィールサイトのサンプルです。",
+      "小学校から大学数学までの単元をわかりやすく解説する、学習コンテンツサイトです。",
     detail:
-      "活動内容が一目で伝わるよう情報を整理し、スマートフォンでも読みやすいレイアウトで実装しました。",
-    isSample: true,
+      "学年別・単元別に検索できるページ構成にし、単元ごとの解説動画とオリジナルプリントのPDF無料ダウンロード機能を実装しました。登録不要で、つまずいた単元から学び直せる作りにしています。",
+    date: "2026/8/1",
+    image: "/images/works/site-sansu-sugaku-atelier.png",
+    linkUrl: "https://www.sansu-sugaku-atelier.com/",
+    isSample: false,
   },
   {
-    id: "sample-circle-site",
-    title: "サークル紹介サイト(サンプル)",
-    category: "Web",
-    role: "デザイン、情報設計、実装",
-    description:
-      "活動内容やメンバー紹介をまとめた、サークル向け複数ページサイトのサンプルです。",
-    detail:
-      "活動紹介・メンバー紹介・イベント情報をページごとに整理し、更新しやすい構成で制作しました。",
-    isSample: true,
-  },
-  {
-    id: "sample-math-worksheet",
-    title: "中学数学 単元別ワークシート(サンプル)",
-    category: "Education",
-    role: "教材構成、問題作成、レイアウト",
-    description:
-      "つまずきやすい単元を中心に構成した、復習用ワークシートのサンプルです。",
-    detail:
-      "基礎から応用への段階を踏めるよう問題を並べ、解き進めやすいレイアウトにまとめました。",
-    isSample: true,
-  },
-  {
-    id: "sample-lesson-slide",
-    title: "高校数学 授業スライド(サンプル)",
-    category: "Education",
-    role: "スライド構成、デザイン",
-    description:
-      "定期テスト対策を目的とした、要点整理型の授業スライドのサンプルです。",
-    detail:
-      "要点を絞って一枚ごとに情報を整理し、見返したときに理解しやすいスライド構成にしました。",
-    isSample: true,
-  },
-  {
-    id: "sample-acappella-score",
-    title: "混声アカペラ フルコーラスアレンジ楽譜(サンプル)",
+    id: "acappella-tenbyonouta",
+    title: "アカペラ楽譜「点描の唄」",
     category: "A Cappella",
     role: "フルコーラスアレンジ、楽譜制作",
     description:
-      "既存曲を混声アカペラ向けにフルコーラスでアレンジした楽譜制作のサンプルです。",
-    detail:
-      "原曲の雰囲気を生かしながら、各パート・ボイスパーカッションの歌いやすさを意識してアレンジ・採譜を行いました。",
-    isSample: true,
-  },
-  {
-    id: "sample-acappella-score-2",
-    title: "少人数編成 フルコーラスアレンジ楽譜(サンプル)",
-    category: "A Cappella",
-    role: "フルコーラスアレンジ、楽譜制作",
-    description:
-      "少人数編成向けに既存曲をフルコーラスでアレンジした楽譜制作のサンプルです。",
+      "「点描の唄」を6〜7人編成の混声アカペラ向けにフルコーラスでアレンジした楽譜制作です。",
     detail:
       "限られた人数でもバランス良く聴こえるよう、パート配置とボイスパーカッションの役割を工夫しました。",
-    isSample: true,
+    date: "2026/8/1",
+    image: "/images/works/acappella_Tenbyonouta.png",
+    youtubeUrl: "https://youtu.be/WuZ66AZrZFc",
+    isSample: false,
   },
 ];
+
+// 実績(isSample: false)を新しい日付順で先頭に、サンプル(isSample: true)は末尾にまとめて表示するための並び替え済み配列です。
+export const sortedWorks: Work[] = [...works].sort((a, b) => {
+  if (a.isSample !== b.isSample) return a.isSample ? 1 : -1;
+  return new Date(b.date).getTime() - new Date(a.date).getTime();
+});
