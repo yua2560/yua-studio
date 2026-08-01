@@ -2,25 +2,91 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #253044;
+
+  /* Brand palette */
+  --color-brand-white: #ffffff;
+  --color-brand-blue-50: #f4f8fd;
+  --color-brand-blue-100: #e7f0fb;
+  --color-brand-blue-200: #d3e4f7;
+  --color-brand-blue-300: #aecbef;
+  --color-brand-navy-500: #3d5a80;
+  --color-brand-navy-700: #2c4160;
+  --color-brand-navy-900: #1f2f45;
+  --color-brand-purple-100: #ece7fb;
+  --color-brand-purple-300: #c9baf0;
+  --color-brand-purple-500: #a68ee0;
+  --color-brand-aqua-100: #e3f6f8;
+  --color-brand-aqua-300: #a9dee6;
+  --color-brand-aqua-500: #6ec3d1;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-white: var(--color-brand-white);
+  --color-brand-blue-50: var(--color-brand-blue-50);
+  --color-brand-blue-100: var(--color-brand-blue-100);
+  --color-brand-blue-200: var(--color-brand-blue-200);
+  --color-brand-blue-300: var(--color-brand-blue-300);
+  --color-brand-navy-500: var(--color-brand-navy-500);
+  --color-brand-navy-700: var(--color-brand-navy-700);
+  --color-brand-navy-900: var(--color-brand-navy-900);
+  --color-brand-purple-100: var(--color-brand-purple-100);
+  --color-brand-purple-300: var(--color-brand-purple-300);
+  --color-brand-purple-500: var(--color-brand-purple-500);
+  --color-brand-aqua-100: var(--color-brand-aqua-100);
+  --color-brand-aqua-300: var(--color-brand-aqua-300);
+  --color-brand-aqua-500: var(--color-brand-aqua-500);
+
+  --font-sans: var(--font-noto-sans-jp);
+  --font-display: var(--font-mplus-rounded);
+
+  --shadow-soft: 0 8px 30px -12px rgba(61, 90, 128, 0.18);
+  --shadow-soft-hover: 0 14px 40px -14px rgba(61, 90, 128, 0.26);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.font-display {
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.shadow-soft-hover:hover {
+  box-shadow: var(--shadow-soft-hover);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+@media (max-width: 480px) {
+  body {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
 }

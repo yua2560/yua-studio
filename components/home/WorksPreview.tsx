@@ -1,0 +1,33 @@
+import Container from "@/components/ui/Container";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Button from "@/components/ui/Button";
+import WorkCard from "@/components/works/WorkCard";
+import { works } from "@/data/works";
+
+export default function WorksPreview() {
+  const preview = works.slice(0, 3);
+
+  return (
+    <section className="py-20 sm:py-28">
+      <Container className="flex flex-col gap-12">
+        <SectionHeading
+          eyebrow="Works"
+          title="制作実績"
+          description="現在はサンプル作品を中心に掲載しています。今後、実際の制作実績も随時追加していきます。"
+        />
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {preview.map((work) => (
+            <WorkCard key={work.id} work={work} />
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Button href="/works" variant="ghost">
+            制作実績をすべて見る →
+          </Button>
+        </div>
+      </Container>
+    </section>
+  );
+}
