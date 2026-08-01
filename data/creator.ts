@@ -8,11 +8,32 @@ export const creatorFields: CreatorField[] = [
   "グラフィックデザイン",
   "サムネイル制作",
   "イラスト",
+  "撮影",
   "作詞",
   "作曲",
   "編曲",
   "アカペラ譜面制作",
   "その他",
+];
+
+export type WelcomeItem = string;
+
+export const welcomeItems: WelcomeItem[] = [
+  "学生",
+  "これから実績を作りたい人",
+  "自分のスキルを仕事につなげてみたい人",
+  "個人で活動しているクリエイター",
+  "副業や空いた時間から始めたい人",
+];
+
+export type BenefitItem = string;
+
+export const benefitItems: BenefitItem[] = [
+  "案件や制作経験を増やせる",
+  "ポートフォリオに掲載できる実績を作れる",
+  "一人では難しい案件にも挑戦できる",
+  "他ジャンルのクリエイターと制作できる",
+  "学生でも参加しやすい",
 ];
 
 export type InvolvementItem = {

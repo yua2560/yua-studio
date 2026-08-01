@@ -17,10 +17,10 @@ export default function AboutPreview() {
         />
 
         <p className="max-w-2xl text-sm leading-relaxed text-foreground/80 sm:text-base">
-          {aboutContent.paragraphs[1]}
+          {aboutContent.paragraphs[0]} {aboutContent.paragraphs[1]}
         </p>
         <Button href="/about" variant="ghost">
-          プロフィールを見る →
+          詳しく見る →
         </Button>
       </Container>
     </section>

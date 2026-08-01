@@ -2,6 +2,7 @@ import Hero from "@/components/home/Hero";
 import AboutPreview from "@/components/home/AboutPreview";
 import ServiceCategories from "@/components/home/ServiceCategories";
 import WhyUs from "@/components/home/WhyUs";
+import CreatorsSection from "@/components/home/CreatorsSection";
 import WorksPreview from "@/components/home/WorksPreview";
 import ProcessSteps from "@/components/home/ProcessSteps";
 import FaqSection from "@/components/home/FaqSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <AboutPreview />
       <ServiceCategories />
       <WhyUs />
+      <CreatorsSection />
       <WorksPreview />
       <ProcessSteps />
       <FaqSection />

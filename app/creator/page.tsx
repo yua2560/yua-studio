@@ -5,7 +5,13 @@ import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
 import CreatorForm from "@/components/creator/CreatorForm";
-import { creatorFields, involvementItems, creatorSteps } from "@/data/creator";
+import {
+  creatorFields,
+  involvementItems,
+  creatorSteps,
+  welcomeItems,
+  benefitItems,
+} from "@/data/creator";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -75,6 +81,47 @@ export default function CreatorPage() {
             ここにない分野でも、{siteConfig.name}
             で活かせそうなスキルがあればぜひご応募ください。
           </p>
+        </Container>
+      </section>
+
+      <section className="bg-brand-blue-50/60 py-20 sm:py-28">
+        <Container className="flex flex-col gap-10">
+          <SectionHeading
+            eyebrow="Welcome"
+            title="こんな人を歓迎します"
+            description="実務経験は必須ではありません。経験よりも、つくることが好きな人を歓迎します。"
+          />
+
+          <div className="mx-auto grid w-full max-w-3xl gap-3 sm:grid-cols-2">
+            {welcomeItems.map((item) => (
+              <Card key={item} className="flex items-center gap-3 py-4">
+                <span className="text-brand-purple-500">・</span>
+                <span className="text-sm font-medium text-brand-navy-900 sm:text-base">
+                  {item}
+                </span>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-20 sm:py-28">
+        <Container className="flex flex-col gap-10">
+          <SectionHeading
+            eyebrow="Benefits"
+            title={`${siteConfig.name}で活動するメリット`}
+          />
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {benefitItems.map((item) => (
+              <Card key={item} className="flex items-center gap-3">
+                <span className="text-brand-purple-500">・</span>
+                <span className="text-sm leading-relaxed text-foreground/80">
+                  {item}
+                </span>
+              </Card>
+            ))}
+          </div>
         </Container>
       </section>
 
