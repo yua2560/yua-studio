@@ -58,6 +58,7 @@ export const services: Service[] = [
       { label: "ミックス", price: "5,000円〜" },
       { label: "ピッチ補正込み", price: "8,000円〜" },
       { label: "マスタリング", price: "3,000円〜" },
+      { label: "エンコード", price: "500円〜" },
     ],
     priceNote: "曲の長さやトラック数、修正回数により変動します。価格はすべて税込です。",
     deliveryFormat: "WAV(ご要望に応じてMP3などにも対応します)",
