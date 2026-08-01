@@ -9,7 +9,7 @@ export const processSteps: ProcessStep[] = [
     step: 1,
     title: "お問い合わせ",
     description:
-      "まずはOneMADE Studioのフォームから、制作内容やご予算、納期などをお聞かせください。",
+      "まずはStart With Studioのフォームから、制作内容やご予算、納期などをお聞かせください。",
   },
   {
     step: 2,
@@ -20,13 +20,13 @@ export const processSteps: ProcessStep[] = [
     step: 3,
     title: "担当クリエイター決定",
     description:
-      "ご依頼内容に合わせて、OneMADE Studioから最適なクリエイターをアサインします。希望するクリエイターがいる場合は、ご相談いただけます。",
+      "ご依頼内容に合わせて、Start With Studioから最適なクリエイターをアサインします。希望するクリエイターがいる場合は、ご相談いただけます。",
   },
   {
     step: 4,
     title: "制作",
     description:
-      "担当クリエイターが制作を進めます。案件の窓口はOneMADE Studioが担当します。",
+      "担当クリエイターが制作を進めます。案件の窓口はStart With Studioが担当します。",
   },
   {
     step: 5,
@@ -60,9 +60,9 @@ export const reasons: Reason[] = [
 
 export const aboutContent = {
   paragraphs: [
-    "OneMADE Studioは、学生・若手クリエイターを中心とした小さなクリエイティブスタジオです。",
+    "Start With Studioは、学生・若手クリエイターを中心とした小さなクリエイティブスタジオです。",
     "音楽、映像、Web、デザイン、教育など、それぞれの得意分野を活かして制作します。",
-    "「制作会社に頼むほどではないけれど、自分だけで作るのは難しい。」そんな時に気軽に頼れる存在を目指しています。",
-    "ご依頼の受付からヒアリング、担当クリエイターのアサイン、制作の進行、納品まで、OneMADE Studioが窓口として一貫してサポートします。",
+    "「つくりたい気持ちはあるけれど、何から始めればいいかわからない。」そんな小さな一歩に寄り添い、ここから一緒につくり始めます。",
+    "ご依頼の受付からヒアリング、担当クリエイターのアサイン、制作の進行、納品まで、Start With Studioが窓口として一貫してサポートします。",
   ],
 };

@@ -10,8 +10,8 @@ export default function ContactCta() {
             まずはお気軽にご相談ください
           </h2>
           <p className="max-w-xl text-sm leading-relaxed text-white/80 sm:text-base">
-            依頼するかどうか決まっていない段階でも大丈夫です。内容や予算感だけでも、お気軽にお問い合わせください。ご依頼・お見積もりはOneMADE
-            Studioが窓口となって承ります。
+            依頼するかどうか決まっていない段階でも大丈夫です。内容や予算感だけでも、お気軽にお問い合わせください。ご依頼・お見積もりはStart
+            With Studioが窓口です。
           </p>
           <Button href="/contact" variant="secondary" className="bg-white">
             問い合わせフォームへ

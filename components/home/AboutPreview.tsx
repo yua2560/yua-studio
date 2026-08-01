@@ -8,11 +8,11 @@ export default function AboutPreview() {
   return (
     <section className="py-20 sm:py-28">
       <Container className="flex flex-col items-center gap-8 text-center">
-        <SectionHeading eyebrow="About" title="OneMADE Studioについて" />
+        <SectionHeading eyebrow="About" title="Start With Studioについて" />
 
         <ImageWithFallback
           src="/images/about/about.png"
-          alt="OneMADE Studioについて"
+          alt="Start With Studioについて"
           wrapperClassName="aspect-[16/7] w-full max-w-xl rounded-3xl shadow-soft"
         />
 

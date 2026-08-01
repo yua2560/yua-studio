@@ -9,7 +9,7 @@ import { categoryInfo, servicesByCategory, ServiceCategory } from "@/data/servic
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "ミックス・マスタリング、動画編集、オリジナル楽曲制作、数学指導、教材制作、Webサイト制作、アカペラ楽譜制作など、OneMADE Studioが提供するサービス一覧です。",
+    "ミックス・マスタリング、動画編集、オリジナル楽曲制作、数学指導、教材制作、Webサイト制作、アカペラ楽譜制作など、Start With Studioが提供するサービス一覧です。",
 };
 
 const categoryOrder: ServiceCategory[] = ["Music", "Video & Design", "Education"];

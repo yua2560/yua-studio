@@ -8,7 +8,7 @@ import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "OneMADE Studioへのお問い合わせはこちらから。ご相談だけでも歓迎しています。",
+  description: "Start With Studioへのお問い合わせはこちらから。ご相談だけでも歓迎しています。",
 };
 
 export default function ContactPage() {
@@ -18,7 +18,7 @@ export default function ContactPage() {
         <SectionHeading
           eyebrow="Contact"
           title="お問い合わせ"
-          description="依頼するかどうか決まっていない段階でのご相談も歓迎です。ご依頼・お見積もりはOneMADE Studioが窓口となって承ります。内容を確認したうえで、ご希望や制作内容に合ったクリエイターをご提案します。"
+          description="依頼するかどうか決まっていない段階でのご相談も歓迎です。ご依頼・お見積もりはStart With Studioが窓口となって承ります。内容を確認したうえで、ご希望や制作内容に合ったクリエイターをご提案します。"
         />
 
         <div className="grid gap-8 lg:grid-cols-3">

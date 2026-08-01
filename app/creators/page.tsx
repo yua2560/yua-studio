@@ -7,7 +7,7 @@ import CreatorsCarousel from "@/components/creators/CreatorsCarousel";
 export const metadata: Metadata = {
   title: "Creators",
   description:
-    "OneMADE Studioに所属するクリエイターを紹介しています。学生・若手クリエイターを中心に、それぞれの得意分野を活かして制作しています。",
+    "Start With Studioに所属するクリエイターを紹介しています。学生・若手クリエイターを中心に、それぞれの得意分野を活かして制作しています。",
 };
 
 export default function CreatorsPage() {

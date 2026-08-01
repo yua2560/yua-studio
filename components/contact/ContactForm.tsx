@@ -86,7 +86,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
       <p className="rounded-2xl bg-brand-blue-50 p-4 text-xs leading-relaxed text-foreground/70 sm:text-sm">
-        ご依頼・お見積もりはOneMADE Studioが窓口となって承ります。内容を確認したうえで、ご希望や制作内容に合ったクリエイターをご提案します。
+        ご依頼・お見積もりはStart With Studioが窓口となって承ります。内容を確認したうえで、ご希望や制作内容に合ったクリエイターをご提案します。
       </p>
 
       <div className="grid gap-6 sm:grid-cols-2">
@@ -144,7 +144,7 @@ export default function ContactForm() {
           onChange={(e) => setCreatorPreference(e.target.value)}
           className="rounded-xl border border-brand-blue-200 bg-white px-4 py-3 text-sm text-foreground outline-none focus:border-brand-navy-500"
         >
-          <option value="">{OMAKASE}(OneMADE Studioにおまかせ)</option>
+          <option value="">{OMAKASE}(Start With Studioにおまかせ)</option>
           {creators.map((creator) => (
             <option key={creator.slug} value={creator.slug}>
               {creator.name}
@@ -152,7 +152,7 @@ export default function ContactForm() {
           ))}
         </select>
         <span className="text-xs font-normal text-foreground/60">
-          特にご希望がなければ、内容に合わせてOneMADE Studioが担当クリエイターをご提案します。
+          特にご希望がなければ、内容に合わせてStart With Studioが担当クリエイターをご提案します。
         </span>
       </label>
 

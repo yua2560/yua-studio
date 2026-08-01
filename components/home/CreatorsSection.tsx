@@ -18,7 +18,7 @@ export default function CreatorsSection() {
             あなたの依頼に、ちょうどいいクリエイターを。
           </h3>
           <p className="text-sm leading-relaxed text-foreground/80">
-            OneMADE Studioには、それぞれ異なる得意分野を持つクリエイターが参加しています。ご相談内容に合わせて、ぴったりの担当者をご提案します。
+            Start With Studioには、それぞれ異なる得意分野を持つクリエイターが参加しています。ご相談内容に合わせて、ぴったりの担当者をご提案します。
           </p>
         </div>
 

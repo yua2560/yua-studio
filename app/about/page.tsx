@@ -8,18 +8,18 @@ import { aboutContent } from "@/data/content";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "OneMADE Studioが目指している「つくりたい人」と「つくれる人」をつなぐクリエイティブスタジオのあり方について紹介しています。",
+    "Start With Studioが目指している「つくりたい人」と「つくれる人」をつなぐクリエイティブスタジオのあり方について紹介しています。",
 };
 
 export default function AboutPage() {
   return (
     <div className="py-16 sm:py-24">
       <Container className="flex flex-col items-center gap-10">
-        <SectionHeading eyebrow="About" title="OneMADE Studioについて" />
+        <SectionHeading eyebrow="About" title="Start With Studioについて" />
 
         <ImageWithFallback
           src="/images/about/about.png"
-          alt="OneMADE Studioについて"
+          alt="Start With Studioについて"
           wrapperClassName="aspect-[16/7] w-full max-w-2xl rounded-3xl shadow-soft"
         />
 

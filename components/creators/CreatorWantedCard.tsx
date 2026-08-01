@@ -15,7 +15,7 @@ export default function CreatorWantedCard() {
       </h3>
 
       <p className="text-sm leading-relaxed text-foreground/80">
-        音楽、映像、デザイン、Webなど、あなたの「つくれる」をOneMADE Studioで活かしてみませんか？
+        音楽、映像、デザイン、Webなど、あなたの「つくれる」をStart With Studioで活かしてみませんか？
       </p>
 
       <Button href="/creator" variant="secondary">

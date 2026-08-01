@@ -17,7 +17,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "Creator",
   description:
-    "OneMADE Studioでは、案件ごとに一緒に制作していただけるクリエイターを募集しています。学生、副業、フリーランスなど、働き方は問いません。",
+    "Start With Studioでは、案件ごとに一緒に制作していただけるクリエイターを募集しています。学生、副業、フリーランスなど、働き方は問いません。",
 };
 
 export default function CreatorPage() {

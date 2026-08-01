@@ -100,7 +100,7 @@ export default async function CreatorProfilePage({ params }: Props) {
 
         <div className="flex flex-col gap-2">
           <p className="text-sm text-foreground/70">
-            制作のご依頼はOneMADE Studioよりお問い合わせください。
+            制作のご依頼はStart With Studioよりお問い合わせください。
           </p>
           <Button href={`/contact?creator=${creator.slug}`} variant="primary">
             このクリエイターに依頼する

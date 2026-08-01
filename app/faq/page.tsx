@@ -7,7 +7,7 @@ import { faqs } from "@/data/faq";
 
 export const metadata: Metadata = {
   title: "FAQ",
-  description: "OneMADE Studioへのご依頼に関するよくある質問をまとめています。",
+  description: "Start With Studioへのご依頼に関するよくある質問をまとめています。",
 };
 
 export default function FaqPage() {

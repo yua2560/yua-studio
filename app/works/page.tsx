@@ -6,7 +6,7 @@ import WorksFilter from "@/components/works/WorksFilter";
 export const metadata: Metadata = {
   title: "Works",
   description:
-    "OneMADE Studioの制作実績・サンプル作品一覧です。Music、Video、Web、Education、A Cappellaのカテゴリで絞り込みができます。",
+    "Start With Studioの制作実績・サンプル作品一覧です。Music、Video、Web、Education、A Cappellaのカテゴリで絞り込みができます。",
 };
 
 export default function WorksPage() {

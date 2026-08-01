@@ -75,7 +75,7 @@ export const creatorSteps: CreatorStep[] = [
   {
     step: 2,
     title: "確認",
-    description: "OneMADE Studioでポートフォリオなどを確認します。",
+    description: "Start With Studioでポートフォリオなどを確認します。",
   },
   {
     step: 3,
@@ -85,7 +85,7 @@ export const creatorSteps: CreatorStep[] = [
   {
     step: 4,
     title: "案件の相談",
-    description: "条件に合いそうな案件が発生した際にOneMADE Studioから連絡します。",
+    description: "条件に合いそうな案件が発生した際にStart With Studioから連絡します。",
   },
   {
     step: 5,
