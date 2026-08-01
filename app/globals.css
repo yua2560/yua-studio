@@ -84,9 +84,6 @@ html {
   animation: fade-in-up 0.6s ease-out both;
 }
 
-@media (max-width: 480px) {
-  body {
-    word-break: keep-all;
-    overflow-wrap: break-word;
-  }
+body {
+  overflow-wrap: break-word;
 }

@@ -114,7 +114,7 @@ export default function MixMasteringCampaignPage() {
                   {service.priceItems.map((price) => (
                     <li
                       key={price.label}
-                      className="flex items-baseline justify-between gap-3"
+                      className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3"
                     >
                       <span className="text-foreground/70">{price.label}</span>
                       <span className="text-foreground/70 line-through">

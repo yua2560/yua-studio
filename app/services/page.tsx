@@ -44,7 +44,10 @@ export default function ServicesPage() {
                   </p>
                   <ul className="flex flex-col gap-1 text-sm text-brand-navy-500">
                     {service.priceItems.slice(0, 2).map((price) => (
-                      <li key={price.label} className="flex justify-between gap-2">
+                      <li
+                        key={price.label}
+                        className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-2"
+                      >
                         <span>{price.label}</span>
                         <span className="font-medium">{price.price}</span>
                       </li>

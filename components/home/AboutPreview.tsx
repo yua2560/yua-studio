@@ -13,7 +13,7 @@ export default function AboutPreview() {
         <ImageWithFallback
           src="/images/about/about.png"
           alt="OneMADE Studioについて"
-          wrapperClassName="aspect-[4/3] w-full max-w-xl rounded-3xl shadow-soft"
+          wrapperClassName="aspect-[16/7] w-full max-w-xl rounded-3xl shadow-soft"
         />
 
         <p className="max-w-2xl text-sm leading-relaxed text-foreground/80 sm:text-base">

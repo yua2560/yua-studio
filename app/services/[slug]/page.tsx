@@ -85,7 +85,10 @@ export default async function ServiceDetailPage({ params }: Props) {
             </h2>
             <ul className="flex flex-col gap-3 text-sm">
               {service.priceItems.map((price) => (
-                <li key={price.label} className="flex items-baseline justify-between gap-3">
+                <li
+                  key={price.label}
+                  className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3"
+                >
                   <span className="text-foreground/80">{price.label}</span>
                   <span className="font-display font-bold text-brand-navy-900">
                     {price.price}

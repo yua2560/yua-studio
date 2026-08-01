@@ -18,7 +18,7 @@ export default function AboutPage() {
         <SectionHeading eyebrow="About" title="OneMADE Studioについて" />
 
         <ImageWithFallback
-          src="/images/about/about-2.png"
+          src="/images/about/about.png"
           alt="OneMADE Studioについて"
           wrapperClassName="aspect-[16/7] w-full max-w-2xl rounded-3xl shadow-soft"
         />
