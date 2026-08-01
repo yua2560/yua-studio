@@ -1,7 +1,6 @@
 "use client";
 
 import CreatorCard from "./CreatorCard";
-import CreatorWantedCard from "./CreatorWantedCard";
 import { creators } from "@/data/creators";
 
 export default function CreatorsCarousel() {
@@ -17,10 +16,6 @@ export default function CreatorsCarousel() {
           <CreatorCard creator={creator} />
         </div>
       ))}
-
-      <div className="w-72 shrink-0 snap-center sm:w-80">
-        <CreatorWantedCard />
-      </div>
     </div>
   );
 }

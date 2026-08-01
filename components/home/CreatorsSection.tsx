@@ -1,8 +1,6 @@
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Button from "@/components/ui/Button";
 import CreatorCard from "@/components/creators/CreatorCard";
-import CreatorWantedCard from "@/components/creators/CreatorWantedCard";
 import { creators } from "@/data/creators";
 
 export default function CreatorsSection() {
@@ -28,13 +26,6 @@ export default function CreatorsSection() {
           {creators.map((creator) => (
             <CreatorCard key={creator.slug} creator={creator} />
           ))}
-          <CreatorWantedCard />
-        </div>
-
-        <div className="text-center">
-          <Button href="/creators" variant="ghost">
-            所属クリエイターを見る →
-          </Button>
         </div>
       </Container>
     </section>
